@@ -43,7 +43,8 @@
       "org.apache.cordova.console": {},
       "org.apache.cordova.device": {},
       "org.apache.cordova.inappbrowser": {},
-      "cordova-plugin-socialsharing": {}
+      "cordova-plugin-socialsharing": {},
+      "cordova-plugin-dialogs": {}
     },
     "platforms": [
       "browser",
