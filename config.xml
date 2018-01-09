@@ -114,7 +114,7 @@
 	<plugin name="cordova-plugin-apprate" />
 	<plugin name="cordova-sms-plugin" />
 	<plugin name="cordova-plugin-email-composer" />
-    <plugin name="cordova-plugin-admobpro" spec="2.19.1" />
+    <!--<plugin name="cordova-plugin-admobpro" spec="2.19.1" />-->
     <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <plugin name="cordova-plugin-x-toast" spec="2.5.2" />
     <plugin name="cordova-plugin-x-socialsharing"  source="npm" />
