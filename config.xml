@@ -112,6 +112,6 @@
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.3" />
     <plugin name="onesignal-cordova-plugin" spec="1.12.6" />
-    <!--<plugin name="SocialSharing-PhoneGap-Plugin"/>-->
-    <plugin name="cordova-plugin-socialsharing" />
+    <!--<plugin name="SocialSharing-PhoneGap-Plugin"/>
+    <plugin name="cordova-plugin-socialsharing" />-->
 </widget>
