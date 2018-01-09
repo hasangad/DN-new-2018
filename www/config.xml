@@ -4,8 +4,8 @@
    xmlns="http://www.w3.org/ns/widgets"
    xmlns:gap="http://cordova.apache.org/ns/1.0"
    versionCode = "1">
-    <name>dn</name>
-    <description>dn</description>
+    <name>Dogrusu News</name>
+    <description>Dogrusu News</description>
     <author email="hasangad.com@gmail.com" href="">D news</author>
     <content src="index.html" />
     <access origin="*" />
