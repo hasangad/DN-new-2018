@@ -110,6 +110,7 @@
     <engine name="browser" spec="^5.0.3" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
+    <plugin name="ionic-plugin-deploy" spec="^0.6.7" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.3" />
     <plugin name="onesignal-cordova-plugin" spec="1.12.6" />
     <!--<plugin name="SocialSharing-PhoneGap-Plugin"/>
