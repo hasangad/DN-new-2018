@@ -1,6 +1,8 @@
 angular.module('WordApp.controllers', [])
 
 
+
+
 /*.controller('myCtrl', ['$scope', function($scope) {
     $scope.count = 0;
     $scope.myFunc = function() {
@@ -11,21 +13,21 @@ angular.module('WordApp.controllers', [])
 	
 	
 	
-.controller('myCtrl', function ($scope,  $rootScope, $http,  $compile) {
+.controller('SliderCtrl', function ($scope,  $rootScope, $http,  $compile) {
 		
 		
 	var url2 ="https://www.dogrusunews.com/mobile-app-slider-data/";
 
    $.getJSON(url2,function(result){
-	      		 	 // alert('ok');
+	      		 	 
+					 //alert('ok');
 
          console.log(result);
   $.each(result, function(i , post){
 	  
 	   //$el = '<button type="" ng-click="myFunc()">Click Me!</button>';
 	   $id = post.post.id;
-	   $el = '<div  class="card post" ng-click="gotoPost('+$id+')"><img src="'+post.post.thumb+'" style="height:100%" /><p >'+post.post.title+'</p></div>';
-
+	   $el = '<div ng-if="post" ng-click="gotoPost('+$id+')"><img src="'+post.post.thumb+'"/><p>'+post.post.title+'</p></div>';
       $('.slider-holder').append($compile($el)($scope));
 	  
  //  $el = "<div ng-click=\""+myFunc()+"\"><img src=\""+post.post.thumb+"\" style='height:100%' /><p >\""+post.post.title+"\"</p></div>";
@@ -40,19 +42,19 @@ angular.module('WordApp.controllers', [])
 		alert('test click');
          };*/
 		 
-		  /*$scope.gotoPost = function(postid) {
+		 $scope.gotoPost = function(postid) {
         $state.go('app.post', {
             'postId': + postid
         });
-    };*/
-	
-	
-
- 
-   
+    };
+  
 })
 
+
 ////////////////////////////////////////
+
+
+
 .controller('AppCtrl', function($scope, IONIC_APP_COLOR, LNG_MENU_POSTS, LNG_MENU_CATEGORIES, LNG_MENU_BOOKMARKS, LNG_MENU_SETTINGS, LNG_MENU_ABOUT, LNG_CATEGORY_TITLE, LNG_NO_DATA, LNG_SEARCH) {
     $scope.color = IONIC_APP_COLOR;
     $scope.lng_menu_posts = LNG_MENU_POSTS;  
@@ -429,6 +431,7 @@ angular.module('WordApp.controllers', [])
     };
 
 })
+
 
 .controller('CategoriesCtrl', function($scope, $http, DataLoader, $ionicLoading, $timeout, $ionicSlideBoxDelegate, WORDPRESS_API_URL, IONIC_APP_COLOR, $log) {
     $scope.color = IONIC_APP_COLOR;
