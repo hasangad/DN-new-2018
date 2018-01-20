@@ -45,15 +45,42 @@
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
- <script>
-    $(document).ready(function(){
-      $('.bxslider').bxSlider();
-    });
-  </script>
-    
+
   </head>
 
   <body ng-app="WordApp" class="platform-android platform-browser platform-ios">
     <ion-nav-view></ion-nav-view>
+    
+  <!--  <div ng-controller="myCtrl">
+    <button ng-click="myFunc()">OK</button>
+    <p>The button has been clicked {{count}} times.</p>
+</div>-->
+    
   </body>
+  
+   <script>
+   
+
+  /* var url2 ="https://www.dogrusunews.com/mobile-app-slider-data/";
+
+   $.getJSON(url2,function(result){
+	      		 	  //alert('ok');
+
+         console.log(result);
+  $.each(result, function(i , post){
+      $(".bxslider").append("<div><a><img src=\""+post.post.thumb+"\" style='height:100%' /><p >'+post.post.title+'</p></a></div>");
+  });*/
+ 
+  	$(document).ready(function() {
+$('.bxslider').bxSlider({
+     auto: true,
+   });
+   
+	}); 
+  
+   
+ 
+ /*});*/
+   
+</script> 
 </html>
