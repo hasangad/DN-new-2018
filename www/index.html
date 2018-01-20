@@ -8,6 +8,17 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+<style>
+.bx-wrapper { border:none; }
+.bx-wrapper img { width:100%; }
+
+.bx-wrapper a { position:relative; width:100%; height:100%; overflow:hidden; display:block;}
+
+.bx-wrapper a p { position:absolute; background:rgba(0,0,0,0.7); padding:10px; color:#ffffff; font-weight:bold; bottom:0; z-index:99; width:100%; margin:0; text-align:center }
+
+</style>
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -31,6 +42,15 @@
     <script src="js/directives.js"></script>
     <script src="js/config.js"></script>
     <script src="js/translate.js"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+ <script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider();
+    });
+  </script>
+    
   </head>
 
   <body ng-app="WordApp" class="platform-android platform-browser platform-ios">
