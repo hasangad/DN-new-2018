@@ -10,44 +10,50 @@ angular.module('WordApp.controllers', [])
 		alert('test click');
          };
 	}])*/
-	
-	
-	
+
+
+
 .controller('SliderCtrl', function ($scope,  $rootScope, $http,  $compile) {
-		
-		
+
+
 	var url2 ="https://www.dogrusunews.com/mobile-app-slider-data/";
 
    $.getJSON(url2,function(result){
-	      		 	 
+
 					 //alert('ok');
 
          console.log(result);
   $.each(result, function(i , post){
-	  
+
 	   //$el = '<button type="" ng-click="myFunc()">Click Me!</button>';
 	   $id = post.post.id;
-	   $el = '<div ng-if="post" ng-click="gotoPost('+$id+')"><img src="'+post.post.thumb+'"/><p>'+post.post.title+'</p></div>';
-      $('.slider-holder').append($compile($el)($scope));
-	  
- //  $el = "<div ng-click=\""+myFunc()+"\"><img src=\""+post.post.thumb+"\" style='height:100%' /><p >\""+post.post.title+"\"</p></div>";
- 		 });
-  	  
-	   //$compile($el)($scope);
+	   //$('.slider-holder').append('<div ng-if="post" ng-click="'+myFunc()+'"><img src="'+post.post.thumb+'"/><p>'+post.post.title+'</p></div>');
+		 $el = "<div ng-click='gotoPost("+post.post.id+")'><a><img src=\""+post.post.thumb+"\" style='height:100%' /><p >\""+post.post.title+"\"</p></a></div>";
+$('.bxslider').append($compile($el)($scope));
 
-    }); 
- 
-	/* $scope.myFunc = function() {
+
+
+ 		 });
+
+	   $compile($el)($scope);
+
+		   $('.bxslider').bxSlider({
+		     auto: true,
+		   });
+
+    });
+
+	/*$scope.myFunc = function() {
        // $scope.count++;
 		alert('test click');
-         };*/
-		 
-		 $scope.gotoPost = function(postid) {
+	};*/
+
+		 /*$scope.gotoPost = function(postid) {
         $state.go('app.post', {
             'postId': + postid
         });
-    };
-  
+    };*/
+
 })
 
 
@@ -57,25 +63,25 @@ angular.module('WordApp.controllers', [])
 
 .controller('AppCtrl', function($scope, IONIC_APP_COLOR, LNG_MENU_POSTS, LNG_MENU_CATEGORIES, LNG_MENU_BOOKMARKS, LNG_MENU_SETTINGS, LNG_MENU_ABOUT, LNG_CATEGORY_TITLE, LNG_NO_DATA, LNG_SEARCH) {
     $scope.color = IONIC_APP_COLOR;
-    $scope.lng_menu_posts = LNG_MENU_POSTS;  
-    $scope.lng_menu_categories = LNG_MENU_CATEGORIES;  
-    $scope.lng_menu_bookmarks = LNG_MENU_BOOKMARKS;  
-    $scope.lng_menu_settings = LNG_MENU_SETTINGS; 
+    $scope.lng_menu_posts = LNG_MENU_POSTS;
+    $scope.lng_menu_categories = LNG_MENU_CATEGORIES;
+    $scope.lng_menu_bookmarks = LNG_MENU_BOOKMARKS;
+    $scope.lng_menu_settings = LNG_MENU_SETTINGS;
     $scope.lng_menu_about = LNG_MENU_ABOUT;
-    $scope.lng_category_title = LNG_CATEGORY_TITLE;    
-    $scope.lng_no_data = LNG_NO_DATA;  
-    $scope.lng_search = LNG_SEARCH;       
+    $scope.lng_category_title = LNG_CATEGORY_TITLE;
+    $scope.lng_no_data = LNG_NO_DATA;
+    $scope.lng_search = LNG_SEARCH;
 })
 
 .controller('PostCtrl', function($scope, $ionicModal, $ionicPopup, $stateParams, DataLoader, WORDPRESS_API_URL, IONIC_APP_COLOR, LNG_POST_TITLE, LNG_POSTED, LNG_IN, LNG_COMMENTS_COUNT, LNG_NO_COMMENTS, LNG_FONT_ADJUST, LNG_ADD_COMMENT, LNG_TOAST_NO_DATA, LNG_SHARE_BUTTON, $ionicLoading, $sce, CacheFactory, $log, Bookmark, $timeout) {
     $scope.color = IONIC_APP_COLOR;
     $scope.lng_post_title = LNG_POST_TITLE;
-    $scope.lng_posted = LNG_POSTED;  
+    $scope.lng_posted = LNG_POSTED;
     $scope.lng_in = LNG_IN;
-    $scope.lng_comments_count = LNG_COMMENTS_COUNT;   
+    $scope.lng_comments_count = LNG_COMMENTS_COUNT;
     $scope.lng_no_comments = LNG_NO_COMMENTS;
     $scope.lng_add_comment = LNG_ADD_COMMENT;
-   
+
 
     $scope.loadImages = JSON.parse(localStorage.getItem('images'));
 
@@ -177,7 +183,7 @@ angular.module('WordApp.controllers', [])
     }
 
 
-    // Font decrease/increase 
+    // Font decrease/increase
     $scope.vm = {
         fontSize: 14
     }
@@ -239,7 +245,7 @@ angular.module('WordApp.controllers', [])
 })
 
 .controller('CommentCtrl', function($scope, $ionicLoading, $ionicScrollDelegate, $timeout, $http, $ionicModal, $stateParams, WORDPRESS_API_URL, LNG_ADD_COMMENT, LNG_NAME, LNG_COMMENT, LNG_EMAIL_REQ, LNG_EMAIL_VALID, LNG_NAME_CHARACTER, LNG_NAME_REQ, LNG_COMMENT_REQ, LNG_COMMENT_CHARACTER, LNG_COMMENT_POSTED, LNG_COMMENT_NOT_POSTED, LNG_COMMENT_APPROVAL) {
-    
+
     $scope.lng_add_comment = LNG_ADD_COMMENT;
     $scope.lng_name = LNG_NAME;
     $scope.lng_comment = LNG_COMMENT;
@@ -248,7 +254,7 @@ angular.module('WordApp.controllers', [])
     $scope.lng_name_character = LNG_NAME_CHARACTER;
     $scope.lng_name_req = LNG_NAME_REQ;
     $scope.lng_comment_req = LNG_COMMENT_REQ;
-    $scope.lng_comment_character = LNG_COMMENT_CHARACTER;   
+    $scope.lng_comment_character = LNG_COMMENT_CHARACTER;
 
     $scope.itemID = $stateParams.postId;
 
@@ -335,10 +341,10 @@ angular.module('WordApp.controllers', [])
             'postId': +postid
         });
     };
-	
+
     // Show Posts from All Categories
     var postsApi = WORDPRESS_API_URL + 'posts';
-	
+
 	// Include Posts from Categories IDs, don't forget make changes in CategoriesCtrl
     //var categoriesApi = WORDPRESS_API_URL + 'posts?filter[cat]=1,2,3';
 
@@ -435,10 +441,10 @@ angular.module('WordApp.controllers', [])
 
 .controller('CategoriesCtrl', function($scope, $http, DataLoader, $ionicLoading, $timeout, $ionicSlideBoxDelegate, WORDPRESS_API_URL, IONIC_APP_COLOR, $log) {
     $scope.color = IONIC_APP_COLOR;
-	
+
     // Show All Categories
     var categoriesApi = WORDPRESS_API_URL + 'categories';
-	
+
 	// Include Categories IDs, don't forget make changes in PostsCtrl
     //var categoriesApi = WORDPRESS_API_URL + 'categories?include=1,2,3';
 
@@ -787,11 +793,11 @@ angular.module('WordApp.controllers', [])
 
     $scope.color = IONIC_APP_COLOR;
     $scope.lng_settings = LNG_SETTINGS;
-    $scope.lng_push_notification = LNG_PUSH_NOTIFICATION; 
+    $scope.lng_push_notification = LNG_PUSH_NOTIFICATION;
     $scope.lng_show_images = LNG_SHOW_IMAGES
     $scope.lng_options = LNG_OPTIONS;
     $scope.lng_rate_this_app = LNG_RATE_APP;
-    $scope.lng_send_feedback = LNG_FEEDBACK;    
+    $scope.lng_send_feedback = LNG_FEEDBACK;
     $scope.lng_send_sms = LNG_SEND_SMS;
 
     // Push Notification
@@ -918,7 +924,7 @@ angular.module('WordApp.controllers', [])
     $scope.lng_send_sms = LNG_SEND_SMS_MODAL;
     $scope.lng_message_sms = LNG_MESSAGE_SMS;
     $scope.lng_message_req_sms = LNG_MESSAGE_REQ_SMS;
-    $scope.lng_message_characters_sms = LNG_MESSAGE_CHARACTER_SMS;    
+    $scope.lng_message_characters_sms = LNG_MESSAGE_CHARACTER_SMS;
 
     $scope.sendSms = function() {
 
