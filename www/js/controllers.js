@@ -28,7 +28,7 @@ angular.module('WordApp.controllers', [])
 	   //$el = '<button type="" ng-click="myFunc()">Click Me!</button>';
 	   $id = post.post.id;
 	   //$('.slider-holder').append('<div ng-if="post" ng-click="'+myFunc()+'"><img src="'+post.post.thumb+'"/><p>'+post.post.title+'</p></div>');
-		 $el = "<div ng-click='gotoPost("+post.post.id+")'><a><img src=\""+post.post.thumb+"\" style='height:100%' /><p >\""+post.post.title+"\"</p></a></div>";
+		 $el = "<div ng-click='gotoPost("+post.post.id+")' style='height:100%'><a><img src=\""+post.post.thumb+"\" style='height:100%' /><p >\""+post.post.title+"\"</p></a></div>";
 $('.bxslider').append($compile($el)($scope));
 
 
