@@ -118,7 +118,8 @@
     <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <plugin name="cordova-plugin-x-toast" spec="2.5.2" />
     <plugin name="cordova-plugin-x-socialsharing"  source="npm" />
-	<plugin name="onesignal-cordova-plugin" spec="2.2.5" source="npm" />
+	<!--<plugin name="onesignal-cordova-plugin" spec="2.2.5" source="npm" />-->
+	<plugin name="onesignal-cordova-plugin" spec="2.2.5 />
 	<plugin name="cordova-plugin-console" spec="1.0.3" />
     <plugin name="cordova-plugin-device" spec="1.1.2" />
 	<plugin name="cordova-plugin-inappbrowser"  spec="1.4.0" />
