@@ -23,7 +23,6 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
-        <icon src="resources/icon/icon.png" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="resources/icon/icon.png" />
@@ -103,6 +102,11 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
+	
+	
+	        <icon src="icon.png" />
+
+	
     <engine name="browser" spec="^5.0.3" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
