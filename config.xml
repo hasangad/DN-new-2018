@@ -5,6 +5,7 @@
     <author email="hasangad.com@gmail.com" href="">D news</author>
     <!--<content src="index.html" />-->
 	    <preference name="permissions" value="none"/>
+		<preference name="android-minSdkVersion" value="14" />
     <!--<preference name="android-build-tool" value="gradle" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
