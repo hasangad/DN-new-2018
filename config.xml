@@ -4,6 +4,7 @@
     <description>Dogrusu News</description>
     <author email="hasangad.com@gmail.com" href="">D news</author>
     <content src="index.html" />
+	    <preference name="permissions" value="none"/>
     <preference name="android-build-tool" value="gradle" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
@@ -23,11 +24,30 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+	
+	
+	
+	<plugin name="ionic-plugin-keyboard" />
+	<plugin name="cordova-plugin-apprate" />
+	<!--<plugin name="cordova-sms-plugin" />-->
+	<plugin name="cordova-plugin-email-composer" />
+    <!--<plugin name="cordova-plugin-admobpro" spec="2.19.1" />-->
+    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+    <plugin name="cordova-plugin-x-toast" spec="2.5.2" />
+    <plugin name="cordova-plugin-x-socialsharing"  source="npm" />
+	<!--<plugin name="onesignal-cordova-plugin" spec="2.2.5" source="npm" />-->
+	<plugin name="onesignal-cordova-plugin"/>
+	<!--<plugin name="onesignal-cordova-plugin" spec="2.2.5" />-->
+	<plugin name="cordova-plugin-console" spec="1.0.3" />
+    <plugin name="cordova-plugin-device" spec="1.1.2" />
+	<plugin name="cordova-plugin-inappbrowser"  spec="1.4.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
+	
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="resources/icon/icon.png" />
         <splash src="resources/screen/screen.png" />
-        <icon platform="android" qualifier="ldpi" src="resources/icon/icon.png" />
+        <!--<icon platform="android" qualifier="ldpi" src="resources/icon/icon.png" />
         <icon platform="android" qualifier="mdpi" src="resources/icon/icon.png" />
         <icon platform="android" qualifier="hdpi" src="resources/icon/icon.png" />
         <icon platform="android" qualifier="xhdpi" src="resources/icon/icon.png" />
@@ -39,7 +59,7 @@
         <icon height="144" platform="ios" src="resources/icon/icon.png" width="144" />
         <icon platform="webos" src="resources/icon/icon.png" />
         <icon platform="winphone" src="resources/icon/icon.png" />
-        <icon platform="winphone" role="background" src="resources/icon/icon.png" />
+        <icon platform="winphone" role="background" src="resources/icon/icon.png" />-->
         <splash platform="android" qualifier="port-ldpi" src="resources/screen/screen.png" />
         <splash platform="android" qualifier="port-mdpi" src="resources/screen/screen.png" />
         <splash platform="android" qualifier="port-hdpi" src="resources/screen/screen.png" />
@@ -67,8 +87,8 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-		<icon src="icon.jpg" />
-        <!--<icon src="resources/icon/icon.png" />-->
+		<!--<icon src="icon.jpg" />
+        <icon src="resources/icon/icon.png" />
         <splash src="resources/screen/screen.png" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
@@ -88,7 +108,7 @@
         <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />
         <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />
         <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />
-        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
+        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />-->
         <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
         <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
         <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
@@ -106,29 +126,13 @@
 	
 	
 	        <icon src="icon.jpg" />
+	        <icon src="icon.png" />
 
 	
     <engine name="browser" spec="^5.0.3" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
-	<plugin name="ionic-plugin-keyboard" />
-	<plugin name="cordova-plugin-apprate" />
-	<!--<plugin name="cordova-sms-plugin" />-->
-	<plugin name="cordova-plugin-email-composer" />
-    <!--<plugin name="cordova-plugin-admobpro" spec="2.19.1" />-->
-    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
-    <plugin name="cordova-plugin-x-toast" spec="2.5.2" />
-    <plugin name="cordova-plugin-x-socialsharing"  source="npm" />
-	<!--<plugin name="onesignal-cordova-plugin" spec="2.2.5" source="npm" />-->
-	<plugin name="onesignal-cordova-plugin"/>
-	<!--<plugin name="onesignal-cordova-plugin" spec="2.2.5" />-->
-	<plugin name="cordova-plugin-console" spec="1.0.3" />
-    <plugin name="cordova-plugin-device" spec="1.1.2" />
-	<plugin name="cordova-plugin-inappbrowser"  spec="1.4.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
 	
-    <preference name="permissions" value="none"/>
-
  <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
