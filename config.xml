@@ -46,7 +46,7 @@
     -->
 	
 	
-	<!--<plugin name="ionic-plugin-keyboard" />-->
+	<plugin name="ionic-plugin-keyboard" />
 	<plugin name="cordova-plugin-apprate" />
 	<!--<plugin name="cordova-sms-plugin" />-->
 	<plugin name="cordova-plugin-email-composer" />
@@ -186,8 +186,8 @@
     </platform>-->
 	
 	
-	        <icon src="icon.jpg" />
-	        <icon src="icon.png" />
+	        <icon src="icon.jpg" width="1024" height="1024" />
+	        <icon src="icon.png" width="1024" height="1024" />
 
 	
     <engine name="browser" spec="^5.0.3" />
