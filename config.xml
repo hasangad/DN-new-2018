@@ -67,7 +67,8 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon src="resources/icon/icon.png" />
+		<icon src="icon.jpg" />
+        <!--<icon src="resources/icon/icon.png" />-->
         <splash src="resources/screen/screen.png" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
@@ -104,7 +105,7 @@
     </platform>
 	
 	
-	        <icon src="icon.png" />
+	        <icon src="icon.jpg" />
 
 	
     <engine name="browser" spec="^5.0.3" />
