@@ -1,0 +1,37 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">{{lng_add_comment}}</h1>
+		<button class="button button-clear button-dark" ng-click="addComment_modal.hide()">
+		  <i class="icon ion-ios-close-empty"></i>
+		</button>
+	</ion-header-bar>
+	<ion-content>
+	<form name="commentForm" ng-controller="CommentCtrl" novalidate>
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+			<span class="input-label">Email: </span>
+			<input type="email" name="email" ng-model="email" placeholder="email" required>
+		  </label>
+		  <label class="item item-input item-floating-label">
+			<span class="input-label">{{lng_name}}: </span>
+			<input type="text" name="name" ng-model="name" placeholder="name" ng-minlength="5" required>
+		  </label>		  
+		  <label class="item item-input item-floating-label">
+			<span class="input-label">{{lng_comment}}: </span>
+			<textarea name="comment" placeholder="Comment" rows="8" cols="10" ng-model="comment" ng-minlength="5" required></textarea>
+		  </label>
+		</div>
+        <div class="padding">
+            <p ng-show="commentForm.email.$error.required">* {{lng_email_req}}</p>
+            <p ng-show="commentForm.email.$invalid && !commentForm.email.$pristine">* {{lng_email_valid}}</p>
+            <p ng-show="commentForm.name.$error.minlength">* {{lng_name_character}}</p>
+            <p ng-show="commentForm.name.$error.required">* {{lng_name_req}}</p>
+            <p ng-show="commentForm.comment.$error.required">* {{lng_comment_req}}</p>			
+            <p ng-show="commentForm.comment.$error.minlength">* {{lng_comment_character}}</p>
+        </div>		
+		<div class="padding">
+          <button class="button button-block button-{{color}}"  ng-disabled="commentForm.$invalid" ng-click="submitComment()">{{lng_add_comment}}</button>
+		</div>
+	</form>
+	</ion-content>
+</ion-modal-view>
